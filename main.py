@@ -9,7 +9,7 @@ pm=PasswordManager()
 #pm.write("gramfgds","mytr","grtsgrse","1htrhr")
 
 def showOptions():
-    inp = input("""[q] to go back""")
+    inp = input("""[q] to go back : """)
     if inp == 'q':
         cls()
         showMenu()
@@ -37,7 +37,7 @@ Options:
 [0]: List all socials
 [1]: Add new social
 [2]: Delete social
-[q]: Quit\n:""")
+[q]: Quit\n>> """)
     match inp:
         case '0':
             listMenu()
@@ -54,6 +54,8 @@ Options:
             listDelete()
             social = input("Social to delete: ")
             pm.delete(social)
+            cls()
+            print(f"{social} has been deleted")
             showMenu()
         case 'q':
             cls()
